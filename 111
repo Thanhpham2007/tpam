@@ -1,0 +1,41 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> Nguyễn Trí Huy </title>
+    </head>
+    <body>
+        <h1> Bài 3: </h1>
+        <h1> Trang web cá nhân của <mark>Trí Huy </mark> </h1>
+        <h2> Thông tin cá nhân </h2>
+        <p> Họ và tên:Nguyễn Trí Huy  </p>
+        <p> Năm sinh: 2007 </p>
+        <p> Quê quán: <a href="https://www.kontum.gov.vn/"> bình định </a></p>
+        <h2> Sở thích</h2>
+        <p> Đọc sách: <em> giá trị cuộc sống</em></p>
+        <p> Thể thao: <strong>đá bóng,<em> đạp xe </em></strong></p>
+        <h1> Bài 4.1: Tạo danh sách</li>
+        <h2> Các môn học lớp 12AS12 </h2>
+        <ol>
+             <li> Môn Tin học </li>
+             <li> Môn Toán </li>
+             <li> Môn Văn </li>
+             <li> Môn Sử </li>
+             <li> môn địa</li>
+             <li> môn giáo dục KT-PL</li>
+             <li> môn hoá</li>
+             <li> môn hđtn</li>
+        </ol>
+        <h1>bài 4.2:tạo bảng </h1>
+        <h2>Danh sách lớp 12AS12 </h2>
+        <table border="1">    
+            <tr>
+        
+              
+
+            </tr>
+
+
+    </body>
+
+
+</html>        

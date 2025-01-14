@@ -1,0 +1,10 @@
+android {
+    compileSdk 34 // Đặt là 34 để hỗ trợ Android 14
+    defaultConfig {
+        applicationId "com.example.yourapp"
+        minSdk 24    // Đặt là 24 để hỗ trợ Android 7.0
+        targetSdk 34 // Đặt là 34 để tối ưu với Android 14
+        versionCode 1
+        versionName "1.0"
+    }
+}

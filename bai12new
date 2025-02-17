@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang web</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="dinhdang.css">
+</head>
+<body>
+    <div class="h_cao header">
+        <h1 class="trang_giua">MẦM NON HAPPY DAYS</h1>
+        <h2 class="trang_giua">GIÁO DỤC SỚM - TƯƠNG TÁC CÁ NHÂN</h2>
+        <h3 class="trang_giua">KHAI MỞ TỐI ĐA TIỀM NĂNG TRÍ TUỆ CỦA TRẺ</h3>
+    </div>
+
+    <div class="gt">
+        <p class="chuxanh">Kính thưa quý phụ huynh!</p>
+        <p class="chutim">Chúng tôi xin trân trọng giới thiệu Trường Mầm Non Happy Days, nơi mang đến cho trẻ em một môi trường học tập an toàn, vui vẻ và đầy sáng tạo...</p>
+        <p><strong>1. Chương trình giáo dục chất lượng cao</strong></p>
+        <p class="chutim">Tại Happy Days, chúng tôi áp dụng chương trình giáo dục mầm non tiên tiến, kết hợp giữa học tập và vui chơi...</p>
+        <p><strong>2. Môi trường học tập an toàn và thân thiện</strong></p>
+        <p class="chutim">Chúng tôi tạo dựng nên môi trường học tập an toàn và thân thiện...</p>
+        <p><strong>3. Hoạt động ngoại khóa phong phú</strong></p>
+        <p class="chutim">Ngoài giờ học, Happy Days còn tổ chức nhiều hoạt động ngoại khóa hấp dẫn...</p>
+        <p class="chutim">Xin chân thành cảm ơn quý phụ huynh đã quan tâm!</p>
+    </div>
+
+    <div class="noidung">
+        <img src="G:\1.jpg" width="200" height="280">
+        <img src="G:\2.jpg" width="200" height="280">
+        <img src="G:\3.jpg" width="200" height="280">
+        <img src="G:\4.jpg" width="200" height="280">
+        <img src="G:\5.jpg" width="200" height="280">
+        <img src="G:\6.jpg" width="200" height="280">
+        <img src="G:\7.jpg" width="200" height="280">
+        <img src="G:\8.jpg" width="200" height="280">
+        <img src="G:\9.jpg" width="200" height="280">
+        <img src="G:\10.jpg" width="250" height="280">
+        <video src="G:\thoitrang.smile.mp4" width="340" height="280" controls></video>
+    </div>
+
+    <div class="h_f_cao">
+        <table>
+            <tr>
+                <td rowspan="2"><img src="G:\11.logo.png" width="50" height="50"></td>
+                <td><p class="phai">Địa chỉ: 32-34 Trần Văn Ơn - Hòa An - Cẩm Lệ - Đà Nẵng</p></td>
+            </tr>
+            <tr>
+                <td><p class="phai">Website: <a href="https://www.youtube.com/@happydays68">Youtube Happy Days</a></p></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

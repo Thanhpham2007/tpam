@@ -1,0 +1,48 @@
+body {
+    background: pink;
+}
+
+.cao {
+    height: 180px;
+}
+
+.gt {
+    height: 220px;
+}
+
+.noidung {
+    height: 580px;
+}
+
+.h_f_cao {
+    height: 100px;
+}
+
+.vien {
+    border-style: solid;
+}
+
+.header {
+    background: orangered;
+    border-style: solid;
+}
+
+.trang_giua {
+    color: white;
+    text-align: center;
+    font-family: monospace;
+    font-size: 50px;
+}
+
+.chuxanh {
+    color: green;
+}
+
+.chutim {
+    color: purple;
+    text-align: justify;
+}
+
+.phai {
+    text-align: right;
+}

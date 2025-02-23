@@ -1,106 +1,25 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang thử nghiệm</title>
-    <style>
-        body {
-            background: linear-gradient(135deg, #ff7f50, #ff1493, #ff4500); /* Màu nền gradient sặc sỡ */
-            font-family: Arial, sans-serif;
-            text-align: center; /* Căn giữa nội dung */
-            padding: 20px; /* Thêm khoảng cách cho nội dung */
-            overflow: hidden; /* Ẩn thanh cuộn */
-            position: relative; /* Để sử dụng hiệu ứng cho các ngôi sao */
-        }
-        h1 {
-            color: #ffffff; /* Màu trắng cho tiêu đề */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Hiệu ứng bóng cho tiêu đề */
-            font-size: 3em; /* Kích thước chữ lớn cho tiêu đề */
-            margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
-            animation: flyIn 2s ease-in-out; /* Hiệu ứng bay vào */
-        }
-        p {
-            color: #ffeb3b; /* Màu vàng cho văn bản */
-            font-size: 1.5em; /* Kích thước chữ lớn hơn */
-            margin-bottom: 20px; /* Khoảng cách dưới đoạn văn */
-            animation: flyIn 2s ease-in-out; /* Hiệu ứng bay vào */
-            animation-delay: 0.5s; /* Độ trễ hiệu ứng */
-        }
-        .anime-image {
-            width: 300px; /* Kích thước hình ảnh */
-            height: auto; /* Giữ tỉ lệ khung hình */
-            border: 5px solid #fff; /* Đường viền màu trắng */
-            border-radius: 15px; /* Bo tròn các góc */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Hiệu ứng bóng cho hình ảnh */
-            transition: transform 0.3s, opacity 0.3s; /* Hiệu ứng chuyển động và độ mờ khi di chuột */
-            animation: float 3s ease-in-out infinite; /* Hiệu ứng bay lên xuống */
-        }
-        .anime-image:hover {
-            transform: rotate(15deg) scale(1.1); /* Quay và phóng to hình ảnh khi di chuột */
-            opacity: 0.8; /* Giảm độ mờ khi di chuột */
-        }
-        @keyframes flyIn {
-            0% { transform: translateY(-100px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); } /* Hiệu ứng bay lên */
-        }
-        .star {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background-color: #ffffff;
-            border-radius: 50%; /* Tạo hình tròn cho ngôi sao */
-            animation: twinkle 1.5s infinite; /* Hiệu ứng nhấp nháy cho ngôi sao */
-        }
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 0.2; }
-        }
-        footer {
-            margin-top: 30px; /* Khoảng cách trên của footer */
-            font-size: 1em; /* Kích thước chữ cho footer */
-            color: #ffffff; /* Màu trắng cho footer */
-            position: relative; /* Để sử dụng hiệu ứng cho footer */
-            animation: fadeIn 2s; /* Hiệu ứng xuất hiện cho footer */
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+<html>
+<head> 
+      <title> Trang web </title>
+      <meta charset = "utf - 8">
+      < link rel="stylesheet" href="dinhdang. cssZ">
 </head>
-<body>
-    <h1>Pham Phu Thanh</h1>
-    <p>Text.</p>
-    <div class="container">
-        <img src="https://i.ibb.co/qybVrNw/taoanhdep-cover-anime.jpg" alt="Text" class="anime-image">
-    </div>
-    <footer>
-        <p>© 2024 Pham Phu Thanh. Tất cả các quyền được bảo lưu.</p>
-    </footer>
-
-    <script>
-        // Tạo ngôi sao ngẫu nhiên
-        const createStar = () => {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            // Đặt vị trí ngẫu nhiên cho ngôi sao
-            star.style.left = Math.random() * window.innerWidth + 'px';
-            star.style.top = Math.random() * window.innerHeight + 'px';
-            star.style.animationDuration = Math.random() * 2 + 1 + 's'; // Độ dài thời gian nhấp nháy ngẫu nhiên
-            document.body.appendChild(star);
-            // Xóa ngôi sao sau khi nó xuất hiện
-            setTimeout(() => {
-                star.remove();
-            }, 3000);
-        };
-
-        // Tạo ngôi sao mỗi 300ms
-        setInterval(createStar, 300);
-    </script>
-</body>
-</html>
+      <body> 
+           <div class=h cao header"›
+              <h1 class="trang giua">MÂM NON HAPPY DAYS </h1> 
+              <h2 class-"trang giua"> GIÁO DỤC SÓM - TƯƠNG TÁC CÁ NHÂN< /h2> 
+              <h3 class="trang giua">KHAI MỞ TỐI ĐA TIỀM NĂNG TRÍ TUỆ CỦA TRẺ </h3>
+          </div> 
+          <div class-"gt">
+              <p class="chuxanh"> Kính thưa quý phụ huynh!</p>
+              <p class-"chutim">Chúng tôi xin trân trọng giới thiệu Trường Măm Non Happy Days, nơi mang đến cho trẻ em một môi trường học tập an toàn, vui vẻ và đày sáng tạo. Tọa lạc tại trung tâm thành phố, Happy Days được thiết kế đặc biệt dành cho các bé từ 12 tháng tuổi, với mục tiêu phát triển toàn diện cả về thể chất, trí tuệ và cảm xúc.</p> 
+              <p><strong>1. Chương trình giáo dục chất lượng cao‹/strong></p>
+              <p class="chutim"> Tại Happy Days, chúng tôi áp dụng chương trình giáo dục măm non tiên tiến, kết hợp giữa học tập và vui chơi. Các bé sẽ được khám phá thế giới xung quanh thông qua những hoạt động học tập thú vị, như nghệ thuật, âm nhạc, thể thao và các trò chơi sáng tạo. Đội ngũ giáo viên giàu kinh nghiệm và tâm huyết sẽ đồng hành cùng trẻ trong từng bước phát triển.</p> 
+              <p><strong>2. Môi trường học tập an toàn và thân thiện</strong></p>
+              <p class-"chutim">Chúng tôi cam kết mang đến môi trường học tập an toàn và thân thiện, nơi trẻ em có thể tự do khám phá và phát triển khả năng sáng tạo của mình. Các phòng học được trang bị đây đủ tiện nghi, đồ chơi giáo dục và các thiết bị hỗ trợ học tập, giúp trẻ phát triển kỹ năng xã hội và tư duy logic.</p> 
+              <p><strong>3. Hoạt động ngoại khóa phong phú</strong></p> 
+              <p class="chutim">Ngoài giờ học, Happy Days còn tổ chức nhiều hoạt động ngoại khóa hấp dẫn, như dã ngoại, tham quan và các buổi biểu diễn nghệ thuật. Những hoạt động này không chi giúp trẻ vui chơi mà còn tạo cơ hội để các bé giao lưu, kết bạn và phát triển kỹ năng sống. </p> 
+              <p class="chutim">Trường Măm Non Happy Days tự hào là nơi khởi đầu cho hành trình giáo dục của trẻ, giúp các bé phát triển toàn diện và chuẩn bị tốt cho những bước tiến tiếp theo trong cuộc sống. Chúng tôi luôn chào đón quý phụ huynh đến tham quan và tìm hiểu về trường. </p>
+              <p class="chutim">Xin chân thành cảm ơn </p>
+           </div>

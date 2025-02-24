@@ -1,0 +1,43 @@
+pip install discord openai python-dotenv
+
+DISCORD_BOT_TOKEN=your_discord_bot_token
+OPENAI_API_KEY=your_openai_api_key
+
+
+import discord
+import openai
+import os
+from dotenv import load_dotenv
+
+# Load biến môi trường từ .env
+load_dotenv()
+TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+# Thiết lập OpenAI
+openai.api_key = OPENAI_API_KEY
+
+# Tạo bot Discord
+intents = discord.Intents.default()
+client = discord.Client(intents=intents)
+
+@client.event
+async def on_ready():
+    print(f'Bot {client.user} đã sẵn sàng!')
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    # Gửi tin nhắn tới OpenAI
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": message.content}]
+    )
+
+    # Gửi phản hồi từ AI
+    await message.channel.send(response["choices"][0]["message"]["content"])
+
+# Chạy bot
+client.run(TOKEN)

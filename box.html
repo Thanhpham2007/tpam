@@ -1,0 +1,54 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>UI Engine Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-900 text-white">
+  <header class="flex justify-between items-center p-4 bg-gray-800">
+   <div class="flex items-center space-x-4">
+    <button class="bg-blue-600 px-4 py-2 rounded">Главная</button>
+    <button class="bg-gray-700 px-4 py-2 rounded"><i class="fas fa-comments"></i></button>
+    <button class="bg-gray-700 px-4 py-2 rounded"><i class="fas fa-filter"></i></button>
+   </div>
+   <div class="flex items-center space-x-4">
+    <span>0 | Зарегистрированных пользователей</span>
+    <button class="bg-gray-700 px-4 py-2 rounded flex items-center space-x-2">
+     <span>Гость</span>
+     <i class="fas fa-user"></i>
+    </button>
+    <button class="bg-gray-700 px-4 py-2 rounded"><i class="fas fa-flag"></i></button>
+   </div>
+  </header>
+  <main class="p-4">
+   <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <script>
+     let products = 16;
+     let container = "";
+     for (let i = 1; i <= products; i++) {
+       container += `
+       <div class="bg-gray-800 p-4 rounded">
+         <img alt="Product ${i}" class="rounded mb-4" src="https://placehold.co/600x400?text=Product+${i}"/>
+         <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-2">
+           <img alt="Logo" class="rounded-full w-10 h-10" src="https://i.imgur.com/D6OrLg3.png"/>
+           <span>Tpam</span>
+          </div>
+          <div class="flex items-center space-x-2">
+           <span>$Free</span>
+           <button class="bg-blue-600 px-4 py-2 rounded">
+            <i class="fas fa-shopping-cart"></i>
+           </button>
+          </div>
+         </div>
+       </div>
+       `;
+     }
+     document.write(container);
+    </script>
+   </div>
+  </main>
+ </body>
+</html>

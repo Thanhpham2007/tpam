@@ -1,0 +1,37 @@
+document.addEventListener("click", function(event) {
+    let button = event.target.closest(".download-btn");
+    if (button) {
+        let thumbnailUrl = button.getAttribute("data-url");
+        let fileId = thumbnailUrl.split("id=")[1];
+
+        if (fileId) {
+            let downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+            
+            // Hiển thị hiệu ứng loading
+            let overlay = document.getElementById("loading-overlay");
+            overlay.classList.remove("hidden");
+
+            let progress = 0;
+            function updateProgress() {
+                if (progress <= 100) {
+                    document.getElementById("progress-bar").style.width = progress + "%";
+                    document.getElementById("percentage").textContent = progress + "%";
+                    progress++;
+                    setTimeout(updateProgress, 40);
+                } else {
+                    // Khi xong, ẩn hiệu ứng loading và tải file
+                    overlay.classList.add("hidden");
+                    let link = document.createElement("a");
+                    link.href = downloadUrl;
+                    link.download = `image-${fileId}.jpg`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+            }
+
+            updateProgress();
+        }
+    }
+});
+​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​

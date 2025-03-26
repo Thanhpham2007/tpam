@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Loading Bar</title>
+    <style>
+        body {
+            background-color: black;
+            color: cyan;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .loading-text {
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+        }
+        .dots span {
+            display: inline-block;
+            animation: bounce 0.6s infinite alternate;
+        }
+        .dots span:nth-child(1) { animation-delay: 0s; }
+        .dots span:nth-child(2) { animation-delay: 0.2s; }
+        .dots span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
+        }
+
+        .progress-container {
+            width: 80%;
+            max-width: 500px;
+            height: 20px;
+            background: transparent;
+            border: 3px solid cyan;
+            border-radius: 20px;
+            padding: 3px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+            position: relative;
+            overflow: hidden;
+        }
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: cyan;
+            border-radius: 20px;
+            box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+            transition: width 0.1s linear;
+        }
+        .percentage {
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-text">
+        Loading<span class="dots"><span>.</span><span>.</span><span>.</span></span>
+    </div>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="percentage" id="percentage">0%</div>
+
+    <script>
+        let progress = 0;
+        function updateProgress() {
+            if (progress <= 100) {
+                document.getElementById("progress-bar").style.width = progress + "%";
+                document.getElementById("percentage").textContent = progress + "%";
+                progress++;
+                setTimeout(updateProgress, 50); // Tốc độ loading
+            }
+        }
+        // Bắt đầu cập nhật progress sau khi tải trang
+        window.onload = () => {
+            updateProgress();
+        };
+    </script>
+</body>
+</html>

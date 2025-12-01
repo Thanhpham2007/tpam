@@ -21,3 +21,9 @@ for (int i = 1; i <= n; i++) {
     if (i % 2 == 0)
         printf("%d ", i);
 }
+
+//printf("Cac so le khong chia het cho 3:\n");
+for (int i = 1; i <= n; i++) {
+    if (i % 2 != 0 && i % 3 != 0)
+        printf("%d ", i);
+}

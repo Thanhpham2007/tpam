@@ -46,3 +46,70 @@ printf("\nS1 = %d", S1);
 printf("\nS2 = %d", S2);
 printf("\nS3 = %.4f", S3);
 printf("\nS4 = %.4f", S4);
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int S1 = 0, S2 = 0;
+    double S3 = 0, S4;
+    int sumDigits = 0, temp;
+    int x; // dùng int cho đơn giản
+
+    printf("Nhap n: ");
+    scanf("%d", &n);
+
+    printf("Nhap x: ");
+    scanf("%d", &x);
+
+    // a) In 1 -> n
+    printf("Cac so tu 1 den %d:\n", n);
+    for(i=1; i<=n; i++)
+        printf("%d ", i);
+
+    // b) So chan
+    printf("\nCac so chan:\n");
+    for(i=1; i<=n; i++)
+        if(i%2==0) printf("%d ", i);
+
+    // c) So le khong chia het cho 3
+    printf("\nCac so le khong chia het cho 3:\n");
+    for(i=1; i<=n; i++)
+        if(i%2!=0 && i%3!=0) printf("%d ", i);
+
+    // d1) S1 = 1 + 2 + ... + n
+    for(i=1; i<=n; i++) S1 += i;
+
+    // d2) S2 = -1 +2 -3 +4 -5 ...
+    for(i=1; i<=n; i++)
+        if(i%2==0) S2 += i;
+        else S2 -= i;
+
+    // d3) S3 = 1/2 + 2/3 + ... + n/(n+1)
+    for(i=1; i<=n; i++)
+        S3 += (double)i/(i+1);
+
+    // d4) S4 = x^n (tính bằng vòng lặp)
+    S4 = 1;
+    for(i=1; i<=n; i++)
+        S4 *= x;
+
+    printf("\nS1 = %d", S1);
+    printf("\nS2 = %d", S2);
+    printf("\nS3 = %.4f", S3);
+    printf("\nS4 = %.0f", S4);
+
+    // e) Tong cac chu so cua n
+    temp = n;
+    while(temp>0){
+        sumDigits += temp%10;
+        temp /= 10;
+    }
+    printf("\nTong cac chu so cua n = %d\n", sumDigits);
+
+    return 0;
+}
+

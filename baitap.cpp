@@ -256,3 +256,29 @@ int main() {
 
     return 0;
 }
+
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int min_n, max_n;
+    printf("Nhap gia tri min va max: ");
+    scanf("%d %d", &min_n, &max_n);
+
+    for(int n = min_n; n <= max_n; n++) {
+        printf("Cac cap chieu dai, chieu rong cho n = %d:\n", n);
+
+        int sqrt_n = (int)sqrt(n); // để giảm số vòng lặp
+
+        for(int w = 1; w <= sqrt_n; w++) {
+            if(n % w == 0) {
+                int l = n / w;
+                printf("%d %d\n", w, l);
+            }
+        }
+    }
+
+    return 0;
+}

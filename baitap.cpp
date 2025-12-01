@@ -173,3 +173,38 @@ int main() {
     return 0;
 }
 
+
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    // a) Nhập n > 0
+    do {
+        printf("Nhap n (>0): ");
+        scanf("%d", &n);
+    } while(n <= 0);
+
+    int count = 0;   // Đếm số lượng số nguyên tố
+    int sum = 0;     // Tổng các số nguyên tố
+
+    printf("Cac so nguyen to tu 2 den %d:\n", n);
+
+    // b) Liệt kê các số nguyên tố từ 2 đến n
+    for(int i = 2; i <= n; i++) {
+        int dem = 0;  // Số ước của i
+        for(int j = 1; j <= i; j++) {
+            if(i % j == 0) dem++;
+        }
+        if(dem == 2) {      // i là số nguyên tố
+            printf("%d ", i);
+            count++;         // c) Đếm số lượng số nguyên tố
+            sum += i;        // d) Cộng vào tổng
+        }
+    }
+
+    printf("\nSo luong so nguyen to: %d", count);
+    printf("\nTong cac so nguyen to: %d\n", sum);
+
+    return 0;
+}

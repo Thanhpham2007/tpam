@@ -1,1 +1,53 @@
-https://www.w3schools.com/html/tryit.asp?filename=tryhtml_editor
+#include <stdio.h>
+
+int main() {
+    int x, y;
+    printf("Nhap x va y: ");
+    scanf("%d %d", &x, &y);
+
+    int a = x, b = y;
+    while(b != 0) {       // thuật toán Euclid
+        int r = a % b;
+        a = b;
+        b = r;
+    }
+
+    printf("Uoc so chung lon nhat (USCLN) = %d\n", a);
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    int x, y;
+    printf("Nhap x va y: ");
+    scanf("%d %d", &x, &y);
+
+    // Tính USCLN trước để dùng cho BSCNN
+    int a = x, b = y;
+    while(b != 0) {
+        int r = a % b;
+        a = b;
+        b = r;
+    }
+    int uscln = a;
+
+    int bscnn = (x * y) / uscln;
+    printf("Boi so chung nho nhat (BSCNN) = %d\n", bscnn);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    for(int i = 1; i <= 9; i++) {          // số thứ tự nhân
+        for(int j = 2; j <= 9; j++) {      // bảng từ 2 → 9
+            printf("%d*%d=%-2d\t", j, i, j*i);
+        }
+        printf("\n");                       // xuống dòng sau mỗi i
+    }
+    return 0;
+}

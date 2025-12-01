@@ -133,3 +133,43 @@ int main() {
 }
 
 
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    // a) Nhập n, 0 < n <= 100, nhập lại nếu sai
+    do {
+        printf("Nhap n (0 < n <= 100): ");
+        scanf("%d", &n);
+    } while(n <= 0 || n > 100);
+
+    // b) Đếm số ước của n
+    int dem = 0;
+    for(int i = 1; i <= n; i++) {
+        if(n % i == 0) dem++;
+    }
+
+    if(dem == 2)
+        printf("%d la so nguyen to\n", n);
+    else
+        printf("%d khong phai la so nguyen to\n", n);
+
+    // c) Tính tổng các ước (không tính chính nó)
+    int tong = 0;
+    for(int i = 1; i < n; i++) {
+        if(n % i == 0)
+            tong += i;
+    }
+
+    if(tong == n)
+        printf("%d la so hoan thien\n", n);
+    else
+        printf("%d khong la so hoan thien\n", n);
+
+    return 0;
+}
+

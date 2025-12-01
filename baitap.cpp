@@ -113,3 +113,23 @@ int main() {
     return 0;
 }
 
+
+#include <stdio.h>
+
+int main() {
+    int n, tong = 0;
+
+    printf("Nhap n: ");
+    scanf("%d", &n);
+
+    while(n > 0) {
+        tong += n % 10;  // Lấy chữ số cuối cùng và cộng vào tong
+        n /= 10;          // Bỏ chữ số vừa lấy
+    }
+
+    printf("Tong cac chu so = %d\n", tong);
+
+    return 0;
+}
+
+

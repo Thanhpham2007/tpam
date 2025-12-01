@@ -208,3 +208,51 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    // a. Nhập n > 0
+    do {
+        printf("Nhap n (>0): ");
+        scanf("%d", &n);
+    } while (n <= 0);
+
+    int i, j;
+    int dem = 0;     // đếm số nguyên tố
+    int tong = 0;    // tổng số nguyên tố
+
+    // b, c, d: duyệt từ 2 đến n
+    printf("Cac so nguyen to tu 2 den %d la: ", n);
+
+    for (i = 2; i <= n; i++) {
+        int laNguyenTo = 1;    // mặc định là nguyên tố
+
+        // kiểm tra i có phải nguyên tố?
+        for (j = 2; j * j <= i; j++) {
+            if (i % j == 0) {
+                laNguyenTo = 0;
+                break;
+            }
+        }
+
+        if (laNguyenTo == 1) {
+            printf("%d ", i);  // liệt kê
+            dem++;            // đếm
+            tong += i;        // cộng tổng
+        }
+    }
+
+    printf("\nSo luong so nguyen to: %d\n", dem);
+    printf("Tong cac so nguyen to: %d\n", tong);
+
+    return 0;
+}

@@ -282,3 +282,45 @@ int main() {
 
     return 0;
 }
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int x, n;
+    int tiep_tuc = 1;
+
+    // Khởi tạo bộ sinh số ngẫu nhiên
+    srand((unsigned) time(NULL));
+
+    while (tiep_tuc == 1) {
+
+        // Random số x trong khoảng 1 đến 99
+        x = 1 + rand() % 99;  
+        printf("Da tao mot so bi mat trong khoang (0 < x < 100).\n");
+
+        do {
+            printf("Nhap gia tri du doan (0 < n < 100): ");
+            scanf("%d", &n);
+
+            if (n < x)
+                printf("Thap hon!\n");
+            else if (n > x)
+                printf("Cao hon!\n");
+            else
+                printf("Chinh xac! So bi mat la %d\n", x);
+
+        } while (n != x);
+
+        printf("Ban co muon choi tiep khong? (1: tiep tuc, 0: dung): ");
+        scanf("%d", &tiep_tuc);
+    }
+
+    printf("Ket thuc chuong trinh.\n");
+    return 0;
+}
+

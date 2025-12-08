@@ -152,21 +152,12 @@ int main() {
     float a, b;
     char ch;
 
-    scanf("%f %f", &a, &b);
-    scanf(" %c", &ch);   // khoảng trắng để bỏ qua Enter
+    scanf("%f%c%f", &a, &ch, &b);
 
-    if (ch == '+')
-        printf("%.2f", a + b);
-    else if (ch == '-')
-        printf("%.2f", a - b);
-    else if (ch == '*')
-        printf("%.2f", a * b);
-    else if (ch == '/')
-        printf("%.2f", a / b);
-    else
-        printf("Phep toan khong hop le");
+    if (ch == '+') printf("%.2f", a + b);
+    else if (ch == '-') printf("%.2f", a - b);
+    else if (ch == '*') printf("%.2f", a * b);
+    else if (ch == '/') printf("%.2f", a / b);
 
     return 0;
 }
-
-

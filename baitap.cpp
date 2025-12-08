@@ -146,3 +146,27 @@ int main() {
 }
 
 
+#include <stdio.h>
+
+int main() {
+    float a, b;
+    char ch;
+
+    scanf("%f %f", &a, &b);
+    scanf(" %c", &ch);   // khoảng trắng để bỏ qua Enter
+
+    if (ch == '+')
+        printf("%.2f", a + b);
+    else if (ch == '-')
+        printf("%.2f", a - b);
+    else if (ch == '*')
+        printf("%.2f", a * b);
+    else if (ch == '/')
+        printf("%.2f", a / b);
+    else
+        printf("Phep toan khong hop le");
+
+    return 0;
+}
+
+

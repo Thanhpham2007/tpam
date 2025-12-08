@@ -164,24 +164,27 @@ int main() {
 
 //cau 6
 #include <stdio.h>
-#include <math.h>
 
 int laSoChinhPhuong(int n) {
-    int x = sqrt(n);
-    if (x * x == n) return 1;
-    return 0;
+    int i;
+    for (i = 0; i * i <= n; i++) {
+        if (i * i == n)
+            return 1; // là số chính phương
+    }
+    return 0; // không phải
 }
 
 int main() {
     int n;
     scanf("%d", &n);
+
     if (laSoChinhPhuong(n))
         printf("La so chinh phuong");
     else
         printf("Khong la so chinh phuong");
+
     return 0;
 }
-
 //cau 7
 #include <stdio.h>
 #include <math.h>

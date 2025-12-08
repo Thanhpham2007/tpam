@@ -77,9 +77,11 @@ int KTNT(int n) {
 void demNT(int n) {
     int i, dem = 0;
     for (i = 1; i <= n; i++)
-        if (KTNT(i))
-            dem++;
-    printf("%d", dem);
+        if (KTNT(i)) {
+            printf("%d ", i);   // ✅ in số nguyên tố
+            dem++;              // ✅ đếm
+        }
+    printf("\nSo luong: %d", dem);
 }
 
 int main() {
@@ -88,7 +90,6 @@ int main() {
     demNT(n);
     return 0;
 }
-
 //e
 #include <stdio.h>
 

@@ -161,3 +161,120 @@ int main() {
 
     return 0;
 }
+
+//cau 6
+#include <stdio.h>
+#include <math.h>
+
+int laSoChinhPhuong(int n) {
+    int x = sqrt(n);
+    if (x * x == n) return 1;
+    return 0;
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    if (laSoChinhPhuong(n))
+        printf("La so chinh phuong");
+    else
+        printf("Khong la so chinh phuong");
+    return 0;
+}
+
+//cau 7
+#include <stdio.h>
+#include <math.h>
+
+int laSoChinhPhuong(int n) {
+    int x = sqrt(n);
+    return x * x == n;
+}
+
+void lietKe(int n) {
+    int i;
+    for (i = 1; i <= n; i++)
+        if (laSoChinhPhuong(i))
+            printf("%d ", i);
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    lietKe(n);
+    return 0;
+}
+
+// cau 9
+#include <stdio.h>
+
+int tongChuSoChan(int n) {
+    int tong = 0, d;
+    while (n > 0) {
+        d = n % 10;
+        if (d % 2 == 0)
+            tong += d;
+        n /= 10;
+    }
+    return tong;
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    printf("%d", tongChuSoChan(n));
+    return 0;
+}
+
+//cau 10
+#include <stdio.h>
+
+int giamDan(int n) {
+    int sau = 10, truoc;
+    while (n > 0) {
+        truoc = n % 10;
+        if (truoc > sau) return 0;
+        sau = truoc;
+        n /= 10;
+    }
+    return 1;
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    if (giamDan(n))
+        printf("Giam dan");
+    else
+        printf("Khong giam dan");
+    return 0;
+}
+
+//cau 8
+#include <stdio.h>
+
+void thongTinHS() {
+    char hoten[50];
+    float toan, van, anh, tb;
+
+    gets(hoten);
+    scanf("%f%f%f", &toan, &van, &anh);
+
+    tb = (toan + van + anh) / 3;
+
+    printf("%s - %.2f - ", hoten, tb);
+
+    if (tb >= 8)
+        printf("Gioi");
+    else if (tb >= 6.5)
+        printf("Kha");
+    else if (tb >= 5)
+        printf("Trung binh");
+    else
+        printf("Yeu");
+}
+
+int main() {
+    thongTinHS();
+    return 0;
+}

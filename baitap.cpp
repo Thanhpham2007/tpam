@@ -207,22 +207,24 @@ int main() {
 
 // cau 9
 #include <stdio.h>
+#include <stdlib.h>
 
-int tongChuSoChan(int n) {
-    int tong = 0, d;
+int tongChuSoChan(long long n) {
+    if (n < 0) n = -n;       // xử lý số âm
+    int tong = 0;
+    if (n == 0) return 0;    // nếu n = 0 thì trả về 0
     while (n > 0) {
-        d = n % 10;
-        if (d % 2 == 0)
-            tong += d;
+        int d = n % 10;
+        if (d % 2 == 0) tong += d;
         n /= 10;
     }
     return tong;
 }
 
 int main() {
-    int n;
-    scanf("%d", &n);
-    printf("%d", tongChuSoChan(n));
+    long long n;
+    if (scanf("%lld", &n) != 1) return 0;
+    printf("%d\n", tongChuSoChan(n));
     return 0;
 }
 

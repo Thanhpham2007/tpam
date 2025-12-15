@@ -414,3 +414,73 @@ int main()
     return 0;
 }
 
+
+
+
+
+
+
+
+#include <stdio.h>
+#define MAX 100
+
+int main()
+{
+    float a[MAX], s = 0, max;
+    int n, dem = 0, vt = -1;
+
+    // a. Nhập mảng
+    do {
+        printf("Nhap n: ");
+        scanf("%d", &n);
+    } while (n <= 0 || n > 100);
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("a[%d] = ", i);
+        scanf("%f", &a[i]);
+    }
+
+    // b. Xuất mảng
+    printf("\nMang: ");
+    for (int i = 0; i < n; i++)
+        printf("%8.2f", a[i]);
+
+    // c. TBC phần tử âm
+    for (int i = 0; i < n; i++)
+        if (a[i] < 0)
+        {
+            s += a[i];
+            dem++;
+            if (vt == -1) vt = i;
+        }
+
+    if (dem == 0)
+        printf("\nKhong co phan tu am nao trong mang");
+    else
+        printf("\nTBC phan tu am: %.2f", s / dem);
+
+    // d. Vị trí âm đầu tiên
+    if (vt != -1)
+        printf("\nVi tri am dau tien: %d", vt);
+
+    // e. Kiểm tra đối xứng
+    int dx = 1;
+    for (int i = 0; i < n / 2; i++)
+        if (a[i] != a[n - i - 1])
+            dx = 0;
+
+    printf("\nMang %s doi xung", dx ? "la" : "khong");
+
+    // f. Vị trí phần tử lớn nhất
+    max = a[0];
+    for (int i = 1; i < n; i++)
+        if (a[i] > max) max = a[i];
+
+    printf("\nVi tri phan tu lon nhat: ");
+    for (int i = 0; i < n; i++)
+        if (a[i] == max)
+            printf("%d ", i);
+
+    return 0;
+}

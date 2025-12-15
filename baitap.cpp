@@ -316,3 +316,101 @@ int main()
 
     return 0;
 }
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+
+#define MAX 100
+
+int trung(int a[], int n, int x)
+{
+    for (int i = 0; i < n; i++)
+        if (a[i] == x) return 1;
+    return 0;
+}
+
+void nhap(int a[], int *n)
+{
+    printf("Nhap n: ");
+    scanf("%d", n);
+    for (int i = 0; i < *n; )
+    {
+        printf("a[%d] = ", i);
+        scanf("%d", &a[i]);
+        if (trung(a, i, a[i]))
+            printf("Trung, nhap lai!\n");
+        else i++;
+    }
+}
+
+void xuat(int a[], int n)
+{
+    for (int i = 0; i < n; i++)
+        printf("%5d", a[i]);
+}
+
+void chinhPhuongLe(int a[], int n)
+{
+    for (int i = 1; i < n; i += 2)
+    {
+        int x = sqrt(a[i]);
+        if (x * x == a[i])
+            printf("%5d", a[i]);
+    }
+}
+
+void viTriMax(int a[], int n)
+{
+    int max = a[0];
+    for (int i = 1; i < n; i++)
+        if (a[i] > max) max = a[i];
+
+    for (int i = 0; i < n; i++)
+        if (a[i] == max)
+            printf("%d ", i);
+}
+
+int tongChan(int a[], int n)
+{
+    int s = 0;
+    for (int i = 0; i < n; i += 2)
+        s += a[i];
+    return s;
+}
+
+void sapXep(int a[], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+        for (int j = i + 1; j < n; j++)
+            if (a[i] > a[j])
+            {
+                int t = a[i];
+                a[i] = a[j];
+                a[j] = t;
+            }
+}
+
+int main()
+{
+    int a[MAX], n = 0, chon;
+
+    do {
+        printf("\n1.Nhap  2.Xuat  3.CP le  4.VT max  5.Tong chan  6.Sap xep  0.Thoat\n");
+        scanf("%d", &chon);
+
+        if (chon == 1) nhap(a, &n);
+        if (chon == 2) xuat(a, n);
+        if (chon == 3) chinhPhuongLe(a, n);
+        if (chon == 4) viTriMax(a, n);
+        if (chon == 5) printf("%d", tongChan(a, n));
+        if (chon == 6) { sapXep(a, n); xuat(a, n); }
+
+    } while (chon != 0);
+
+    return 0;
+}
+

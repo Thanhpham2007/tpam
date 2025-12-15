@@ -181,3 +181,138 @@ int main()
 
     return 0;
 }
+
+
+
+
+
+#include <stdio.h>
+
+#define MAX 100
+
+// Nhập số phần tử
+void nhapSL(int *n)
+{
+    do {
+        printf("Nhap so phan tu (3 <= n <= 20): ");
+        scanf("%d", n);
+    } while (*n < 3 || *n > 20);
+}
+
+// Nhập mảng
+void nhapMang(int a[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        printf("a[%d] = ", i);
+        scanf("%d", &a[i]);
+    }
+}
+
+// Xuất mảng
+void xuatMang(int a[], int n)
+{
+    for (int i = 0; i < n; i++)
+        printf("%5d", a[i]);
+}
+
+// b. Thêm phần tử d ở đầu mảng
+void themDau(int a[], int *n, int d)
+{
+    (*n)++;
+    for (int i = *n - 1; i > 0; i--)
+        a[i] = a[i - 1];
+    a[0] = d;
+}
+
+// c. Thêm phần tử c ở cuối mảng
+void themCuoi(int a[], int *n, int c)
+{
+    a[*n] = c;
+    (*n)++;
+}
+
+// d. Thêm phần tử t tại vị trí k
+void themTaiK(int a[], int *n, int k, int t)
+{
+    if (k < 0 || k >= *n)
+        return;
+
+    (*n)++;
+    for (int i = *n - 1; i > k; i--)
+        a[i] = a[i - 1];
+    a[k] = t;
+}
+
+// e. Xoá phần tử đầu tiên
+void xoaDau(int a[], int *n)
+{
+    for (int i = 0; i < *n - 1; i++)
+        a[i] = a[i + 1];
+    (*n)--;
+}
+
+// f. Xoá phần tử cuối cùng
+void xoaCuoi(int *n)
+{
+    (*n)--;
+}
+
+// g. Xoá phần tử tại vị trí k
+void xoaTaiK(int a[], int *n, int k)
+{
+    if (k < 0 || k >= *n)
+        return;
+
+    for (int i = k; i < *n - 1; i++)
+        a[i] = a[i + 1];
+    (*n)--;
+}
+
+int main()
+{
+    int a[MAX], n;
+    int d, c, t, k;
+
+    nhapSL(&n);
+    nhapMang(a, n);
+
+    printf("\nMang ban dau:\n");
+    xuatMang(a, n);
+
+    // b
+    printf("\n\nNhap d (them dau): ");
+    scanf("%d", &d);
+    themDau(a, &n, d);
+    xuatMang(a, n);
+
+    // c
+    printf("\n\nNhap c (them cuoi): ");
+    scanf("%d", &c);
+    themCuoi(a, &n, c);
+    xuatMang(a, n);
+
+    // d
+    printf("\n\nNhap k va t (them tai k): ");
+    scanf("%d%d", &k, &t);
+    themTaiK(a, &n, k, t);
+    xuatMang(a, n);
+
+    // e
+    printf("\n\nXoa phan tu dau:\n");
+    xoaDau(a, &n);
+    xuatMang(a, n);
+
+    // f
+    printf("\n\nXoa phan tu cuoi:\n");
+    xoaCuoi(&n);
+    xuatMang(a, n);
+
+    // g
+    printf("\n\nNhap k (xoa tai k): ");
+    scanf("%d", &k);
+    xoaTaiK(a, &n, k);
+    xuatMang(a, n);
+
+    return 0;
+}

@@ -265,3 +265,63 @@ int main() {
 
     return 0;
 }
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LEN 100
+
+int main() {
+    char s[MAX_LEN];
+    int i, len, ok = 1;
+
+    printf("Nhap chuoi: ");
+    gets(s);
+
+    len = strlen(s);
+
+    for(i = 0; i < len / 2; i++) {
+        if(s[i] != s[len - i - 1]) {
+            ok = 0;
+            break;
+        }
+    }
+
+    if(ok)
+        printf("Chuoi doi xung\n");
+    else
+        printf("Chuoi khong doi xung\n");
+
+    return 0;
+}
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LEN 100
+
+int main() {
+    char s[MAX_LEN], x;
+    int i, dem = 0;
+
+    printf("Nhap chuoi: ");
+    gets(s);
+
+    printf("Nhap ky tu can dem: ");
+    scanf("%c", &x);
+
+    for(i = 0; s[i] != '\0'; i++) {
+        if(s[i] == x)
+            dem++;
+    }
+
+    printf("Ky tu '%c' xuat hien %d lan\n", x, dem);
+
+    return 0;
+}

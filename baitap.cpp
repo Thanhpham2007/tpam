@@ -184,3 +184,33 @@ int main() {
 
     return 0;
 }
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LEN 100
+
+int main() {
+    char s1[MAX_LEN], s2[MAX_LEN];
+
+    // Nhập hai chuỗi
+    printf("Nhap chuoi s1: ");
+    scanf("%s", s1);
+    printf("Nhap chuoi s2: ");
+    scanf("%s", s2);
+
+    // So sánh chuỗi (không phân biệt hoa/thường)
+    int result = strcasecmp(s1, s2);
+
+    if (result < 0)
+        printf("<\n");
+    else if (result > 0)
+        printf(">\n");
+    else
+        printf("=\n");
+
+    return 0;
+}

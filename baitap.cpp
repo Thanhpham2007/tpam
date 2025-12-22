@@ -214,3 +214,30 @@ int main() {
 
     return 0;
 }
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LEN 100
+
+int main() {
+    char s1[MAX_LEN], s2[MAX_LEN];
+
+    // Nhập hai chuỗi
+    printf("Nhap chuoi s1: ");
+    gets(s1);  // Lưu ý: gets() đơn giản nhưng nguy hiểm, vẫn dùng cho bài cơ bản
+    printf("Nhap chuoi s2: ");
+    gets(s2);
+
+    // Nối s2 vào s1 với 1 khoảng trắng
+    strcat(s1, " ");
+    strcat(s1, s2);
+
+    // In chuỗi kết quả
+    printf("Chuoi sau khi noi: %s\n", s1);
+
+    return 0;
+}

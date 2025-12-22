@@ -325,3 +325,25 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LEN 100
+
+int main() {
+    char s1[MAX_LEN], s2[MAX_LEN];
+
+    printf("Nhap chuoi: ");
+    gets(s1);
+
+    strcpy(s2, s1); // sao chép s1 sang s2
+
+    printf("Chuoi sao chep: %s\n", s2);
+
+    return 0;
+}

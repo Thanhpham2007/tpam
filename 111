@@ -1,0 +1,31 @@
+import machine
+import time
+import dht
+
+DHT_PIN = 32
+LED_PIN = 25
+
+dht_sensor = dht.DHT22(machine.Pin(DHT_PIN))
+led = machine.Pin(LED_PIN, machine.Pin.OUT)
+
+TEMP_THRESHOLD = 40
+
+while True:
+    try:
+        dht_sensor.measure()
+        temperature = dht_sensor.temperature()
+        humidity = dht_sensor.humidity()
+
+        print("Nhiệt độ: {}°C | Độ ẩm: {}%".format(temperature, humidity))
+
+        if temperature > TEMP_THRESHOLD:
+            led.value(1)
+            print("Cảnh báo: Nhiệt độ cao!")
+        else:
+            led.value(0)
+            print("Nhiệt độ trong ngưỡng an toàn.")
+
+    except Exception as e:
+        print("Lỗi khi đọc cảm biến:", e)
+
+    time.sleep(2)
